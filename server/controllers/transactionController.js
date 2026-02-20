@@ -1,6 +1,4 @@
-const KodUser = require('../models/KodUser');
-const Transaction = require('../models/Transaction');
-const sequelize = require('../config/database');
+const { KodUser, Transaction, sequelize } = require('../models');
 
 exports.transferMoney = async (req, res) => {
     const transaction = await sequelize.transaction();

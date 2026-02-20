@@ -1,4 +1,4 @@
-const KodUser = require('../models/KodUser');
+const { KodUser, Card } = require('../models');
 
 exports.getBalance = async (req, res) => {
     try {

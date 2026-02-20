@@ -28,7 +28,4 @@ const UserToken = sequelize.define('UserToken', {
     timestamps: true,
 });
 
-KodUser.hasMany(UserToken, { foreignKey: 'uid' });
-UserToken.belongsTo(KodUser, { foreignKey: 'uid' });
-
 module.exports = UserToken;

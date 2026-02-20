@@ -44,7 +44,4 @@ const Card = sequelize.define('Card', {
     timestamps: true,
 });
 
-KodUser.hasMany(Card, { foreignKey: 'uid' });
-Card.belongsTo(KodUser, { foreignKey: 'uid' });
-
 module.exports = Card;

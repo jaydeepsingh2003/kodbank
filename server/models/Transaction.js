@@ -43,9 +43,4 @@ const Transaction = sequelize.define('Transaction', {
     timestamps: true,
 });
 
-KodUser.hasMany(Transaction, { as: 'SentTransactions', foreignKey: 'fromUid' });
-KodUser.hasMany(Transaction, { as: 'ReceivedTransactions', foreignKey: 'toUid' });
-Transaction.belongsTo(KodUser, { as: 'Sender', foreignKey: 'fromUid' });
-Transaction.belongsTo(KodUser, { as: 'Receiver', foreignKey: 'toUid' });
-
 module.exports = Transaction;
