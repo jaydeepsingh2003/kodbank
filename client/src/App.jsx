@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import VerifyEmail from './pages/VerifyEmail';
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = !!localStorage.getItem('token');
@@ -26,7 +25,6 @@ function App() {
       <Routes>
         <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
         <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-        <Route path="/verify/:token" element={<PublicRoute><VerifyEmail /></PublicRoute>} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="*" element={<DefaultRoute />} />
       </Routes>

@@ -16,7 +16,10 @@ const Register = () => {
         setIsLoading(true); setError(''); setSuccess('');
         try {
             const res = await axios.post('http://localhost:5000/api/auth/register', formData);
-            setSuccess(res.data.message || 'Identity Registered. Verification link dispatched to secure comms.');
+            setSuccess(res.data.message || 'Identity Registered successfully. Initiating routing...');
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed. Request denied.');
         } finally {
